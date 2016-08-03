@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:orientation="horizontal">
+<TextView android:layout_height="match_parent"
+    android:layout_width="50dp"
+    android:id="@+id/CountryText"
+    android:text="Country"/>
+     <EditText android:layout_height="match_parent"
+         android:layout_width="50dp"
+         android:id="@+id/CountryEdit"
+         android:text="Country"/>
+     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView android:layout_height="match_parent"
+            android:layout_width="50dp"
+            android:id="@+id/AddressText"
+            android:text="Country"/>
+        <EditText android:layout_height="match_parent"
+            android:layout_width="50dp"
+            android:id="@+id/AddressEdit"
+            android:text="Country"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView android:layout_height="match_parent"
+            android:layout_width="50dp"
+            android:id="@+id/OwnerText"
+            android:text="Country"/>
+        <EditText android:layout_height="match_parent"
+            android:layout_width="50dp"
+            android:id="@+id/OwnerEdit"
+            android:text="Country"/>
+    </LinearLayout>
+
+</LinearLayout>

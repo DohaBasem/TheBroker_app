@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "351733841027",
+    "project_id": "the-broker"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:351733841027:android:7102ea9d98fbedd5",
+        "android_client_info": {
+          "package_name": "app.com.example.doha.thebroker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "351733841027-sdc4l2bonpqhrnbdpnqanu21pvd9spha.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.com.example.doha.thebroker",
+            "certificate_hash": "D93866946C6955193EFAA5A1583C161A48BAA502"
+          }
+        },
+        {
+          "client_id": "351733841027-9djfih60gf3c3oftll095e4anl3ighdm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc6H8uP38yMMx3yswsyaV0ivcP_ZzyXN8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

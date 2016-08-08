@@ -92,6 +92,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 return false;
             }
         });*/
+        registerdItems getItems=new registerdItems();
+    //   getItems.execute();
     }
 
     @Override
@@ -291,7 +293,10 @@ mLastLocation=location;
     }
     class registerdItems extends AsyncTask<Void,Void,Void>{
 
-        private String urlPath = "http://brokerserver-doha.rhcloud.com/users/getAllItems";
+      //  private String urlPath = "http://brokerserver-doha.rhcloud.com/users/getAllItems";
+      //  private String urlPath =" http://localhost:8080/users/getAllItems";
+    //  private String urlPath ="http://10.0.2.2:8080/users/getAllItems";
+        private String urlPath ="http://192.168.156.1:8080/users/getAllItems";
 
         private String AssetsDataJsonStr;
         //ArrayList that is populated after recieving a response from the server with all the availble assets

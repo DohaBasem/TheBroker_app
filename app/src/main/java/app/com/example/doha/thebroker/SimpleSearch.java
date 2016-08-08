@@ -8,6 +8,7 @@ import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -25,6 +26,17 @@ public class SimpleSearch extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_search);
+    ArrayList<proprietary> P=new ArrayList<proprietary>();
+       proprietary p1=new proprietary();
+        p1.setCountry("Egypt");
+        p1.setAddress("Rehab");
+        proprietary p2=new proprietary();
+        p2.setCountry("KSA");
+        p2.setAddress("Olia");
+       P.add(p1);
+       P.add(p2);
+        MakeListAdapter(P);
+
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -119,8 +131,15 @@ String urlPath="http://brokerserver-doha.rhcloud.com/client/addItem";
         super.onPostExecute(aVoid);
     if(Assets!=null){
 
-
+        MakeListAdapter(Assets);
     }
     }
 }
+    public void MakeListAdapter(ArrayList<proprietary> P){
+        final ListAdapter adapter=new ListAdapter(getApplicationContext(),R.layout.search_item,P);
+
+        adapter.notifyDataSetChanged();
+        ListView resultList=(ListView)findViewById(R.id.myList);
+        resultList.setAdapter(adapter);
+    }
 }

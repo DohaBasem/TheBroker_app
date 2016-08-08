@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -57,17 +58,17 @@ public class ProprietaryForm extends AppCompatActivity {
         type.add("Apartement");
         type.add("Villa");
         type.add("Other");
-        Spinner typeSpinner = (Spinner) findViewById(R.id.type);
+        Spinner typeSpinner = (Spinner) findViewById(R.id.type_Spinner);
         ArrayAdapter<String> typeAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, type);
         typeSpinner.setAdapter(typeAdapter);
         ArrayList<String> actions = new ArrayList<String>();
         actions.add("Rent");
         actions.add("Sell");
 
-        Spinner actionsSpinner = (Spinner) findViewById(R.id.action);
+        Spinner actionsSpinner = (Spinner) findViewById(R.id.action_spinner);
         ArrayAdapter<String> actionsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, actions);
         actionsSpinner.setAdapter(actionsAdapter);
-        EditText address = (EditText) findViewById(R.id.Address);
+        EditText address = (EditText) findViewById(R.id.Address_EditText);
         Button publish=(Button)findViewById(R.id.publish_button);
 
         if (item != null) {
@@ -97,6 +98,7 @@ public class ProprietaryForm extends AppCompatActivity {
             public void onClick(View v) {
             AddingAsset addedItem=new AddingAsset();
                 addedItem.execute();
+                Toast.makeText(getApplicationContext(),"HERRREEEE",Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -144,7 +146,11 @@ public class ProprietaryForm extends AppCompatActivity {
     }
 
     class AddingAsset extends AsyncTask<Void, Void, Void> {
-        private String urlPath = "";
+       // private String urlPath = "";
+      //  String urlPath=" http:// 192.168.1.2:49199/client/addItem";
+    //   String urlPath="https://www.facebook.com";
+       String urlPath="http://localhost:8080/client/addItem";
+
         //urlPath="...../client/addItem"
         @Override
         protected Void doInBackground(Void... params) {
@@ -160,7 +166,7 @@ public class ProprietaryForm extends AppCompatActivity {
                     HttpURLConnection urlConnection = null;
                     try {
                         urlConnection = (HttpURLConnection) url.openConnection();
-                        urlConnection.connect();
+               //         urlConnection.connect();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -178,12 +184,20 @@ public class ProprietaryForm extends AppCompatActivity {
                     urlConnection.setDoInput(true);
                     urlConnection.setDoOutput(true);
 
-
-                    urlConnection.disconnect();
+                    try {
+                        urlConnection.connect();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
                 }
             }
             return null;
+        }
+        @Override
+        protected void onPostExecute(Void aVoid){
+
+            Toast.makeText(getApplicationContext(),"ON post execute",Toast.LENGTH_LONG).show();
         }
     }
 

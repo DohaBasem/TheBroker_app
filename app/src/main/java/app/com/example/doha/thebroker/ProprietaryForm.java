@@ -98,7 +98,7 @@ public class ProprietaryForm extends AppCompatActivity {
             public void onClick(View v) {
             AddingAsset addedItem=new AddingAsset();
                 addedItem.execute();
-                Toast.makeText(getApplicationContext(),"HERRREEEE",Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(),"HERRREEEE",Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -149,7 +149,7 @@ public class ProprietaryForm extends AppCompatActivity {
        // private String urlPath = "";
       //  String urlPath=" http:// 192.168.1.2:49199/client/addItem";
     //   String urlPath="https://www.facebook.com";
-       String urlPath="http://localhost:8080/client/addItem";
+       String urlPath="http://thebroker-ad3rhy2.rhcloud.com/client/addItem";
 
         //urlPath="...../client/addItem"
         @Override

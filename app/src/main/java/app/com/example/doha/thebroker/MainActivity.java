@@ -74,7 +74,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
 
 //Call tha asynctask here
-
+        registerdItems getItems=new registerdItems();
+        getItems.execute();
         //Check if GooglePlayServices are availble on the device
         boolean Services_available = checkGooglePlayServices(this);
         if (Services_available) {
@@ -84,16 +85,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
         //The items in the DB are displayed on the map
 
-        /*mMap.addMarker(new MarkerOptions().position(new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude())).draggable(true));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude())).draggable(true));
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
                 marker.remove();
                 return false;
             }
-        });*/
-        registerdItems getItems=new registerdItems();
-    //   getItems.execute();
+        });
+
     }
 
     @Override
@@ -296,7 +296,7 @@ mLastLocation=location;
       //  private String urlPath = "http://brokerserver-doha.rhcloud.com/users/getAllItems";
       //  private String urlPath =" http://localhost:8080/users/getAllItems";
     //  private String urlPath ="http://10.0.2.2:8080/users/getAllItems";
-        private String urlPath ="http://192.168.156.1:8080/users/getAllItems";
+        private String urlPath ="http://thebroker-ad3rhy2.rhcloud.com/users/getAllItems";
 
         private String AssetsDataJsonStr;
         //ArrayList that is populated after recieving a response from the server with all the availble assets
